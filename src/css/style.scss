@@ -1,0 +1,103 @@
+/* Font Family */
+$font-proximanova: "ProximaNova";
+$icons-marriotticon: "MarriottIcons";
+$base-font-family: $font-proximanova, "Calibri", Arial, "Helvetica", Helvetica, sans-serif;
+
+/* Font Sizes */
+$font-s: 0.875rem;
+$font-m: 1rem;
+$font-ms: 1.125rem;
+
+/* Colors */ 
+$white: #fff;
+$black: #1c1c1c;
+$grey: #d2d2d2;
+$greyish-brown: #494949;
+
+/******************************************************************/
+html {
+    font-size: 16px;
+}
+
+@font-face {
+    font-family: $font-proximanova;
+    src: url("fonts/proxima-nova-all/proxima-nova-regular-webfont.eot");
+    src: url("fonts/proxima-nova-all/proxima-nova-regular-webfont.eot?#iefix") format('embedded-opentype'), url("fonts/proxima-nova-all/proxima-nova-regular-webfont.woff") format('woff'), url("fonts/proxima-nova-all/proxima-nova-regular-webfont.ttf") format('truetype'), url("fonts/proxima-nova-all/proxima-nova-regular-webfont.svg") format('svg');
+}
+
+@font-face {
+    font-family: $icons-marriotticon;
+    src: url("fonts/proxima-nova-all/marriott-icons.eot");
+    src: url("fonts/proxima-nova-all/marriott-icons.eot?#iefix") format('embedded-opentype'), url("fonts/proxima-nova-all/marriott-icons.woff") format('woff'), url("fonts/proxima-nova-all/marriott-icons.ttf") format('truetype'), url("fonts/proxima-nova-all/marriott-icons.svg") format('svg');
+}
+
+body {
+    background-color: $white;
+    color: $black;
+    font-family: $base-font-family;
+}
+
+/* Mixins */
+
+@mixin element-dimensions($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin element-positioning($top, $left) {
+    top: $top;
+    left: $left;
+}
+
+/* Slider Styles */
+.mi-slider {
+    .l-frame {
+        margin-bottom: 2.5rem;
+
+        ul {
+            li {
+                min-width: 20rem;
+            }
+        }
+    }
+} /* End of class mi-slider */
+
+/* Custom Scrollbar Styles */
+.mi-scrollbar {
+    position: relative;
+    margin: 0 auto;
+    min-width: 17.5rem;
+    height: 0.0625rem;
+    background: $grey;
+    line-height: 0;
+
+    .handle {
+        position: absolute;
+        top: -0.0625rem;
+        min-width: 46%;
+        max-width: 13rem;
+        height: 0.1875rem;
+        border: 0;
+        background: $greyish-brown;
+        cursor: pointer;
+
+        .mousearea {
+            @include element-dimensions(100%, 100%);
+            @include element-positioning(-0.0625rem, 0);
+
+            position: absolute;
+        }
+    }
+} /* End Custom Scrollbar Styles */
+
+/* Media queries for different viewports */
+@media (--large-viewport) {
+    .scrollbar {
+        margin-right: 3.375rem;
+        margin-left: 3.375rem;
+
+        .handle {
+            min-width: 20rem;
+        }
+    }
+} /* End of media queries */

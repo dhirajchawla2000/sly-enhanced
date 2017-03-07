@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../build/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.js"></script>
+    <style type="text/css">
+      .mi-slider .l-frame {
+        line-height: 338px !important;
+      }
+      .mi-slider li {
+        width: 320px !important;
+        height: 338px !important;
+        background: grey !important;
+        margin: 20px !important;
+        font-size: 20px !important;
+        color: white !important;
+      }
+      .mi-slider li.active {
+        width: 320px !important;
+        height: 338px !important;
+        background: lightblue !important;
+      }
+      .mi-slider {
+        position: relative;
+      } /* End of class mi-slider */
+      .mi-slider .l-frame {
+        overflow: hidden;
+        margin-bottom: 1.25rem;
+        min-height: 12.5rem;
+      }
+      .mi-slider .l-frame ul {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        list-style: none;
+      }
+      .mi-slider .l-frame ul li {
+        float: left;
+        margin: 0;
+        padding: 0;
+        min-width: 17.5rem;
+        height: 100%;
+        background: transparent;
+        text-align: center;
+        cursor: pointer;
+      }
+      .mi-slider .l-frame ul li.active {
+          color: $white;
+      }
+    </style>
+</head>
+
+<body>
+  <div class="mi-slider" style="width: 100%;"
+    data-cycle-by = "null"
+    data-cycle-interval = "3000"
+    data-min-handle-size = "128">
+    <div class="l-frame" id="basic">
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+      </ul>
+    </div>
+  </div>
+  <script type="text/javascript" src="../build/sly.js"></script>
+  <script type="text/javascript">
+    /**
+     * Initialize global widget on dom ready
+     */
+    $(function() {
+        // Default configuration.
+        var scrollBarHTML = '<div class="mi-scrollbar">' +
+            '<div class="handle">' +
+              '<div class="mousearea"></div>' +
+            '</div>' +
+          '</div>',
+          $scrollbar = $('.mi-slider').append(scrollBarHTML).find('.mi-scrollbar'),
+          defaults = {
+            horizontal: 1,
+            itemNav: 'basic',
+            smart: 1,
+            activateOn: 'click',
+            keyboardNavBy: 'items',
+            mouseDragging: 1,
+            touchDragging: 1,
+            releaseSwing: 1,
+            startAt: 0,
+            scrollBar: $scrollbar[0],
+            scrollBy: 1,
+            activatePageOn: 'click',
+            speed: 300,
+            elasticBounds: 1,
+            easing: 'easeOutExpo',
+            dragHandle: 1,
+            dynamicHandle: 0,
+            clickBar: 1,
+            cycleBy: null,
+            cycleInterval: 3000,
+            minHandleSize: 128
+          },
+          $frame = $('.mi-slider .l-frame');
+        // initialize slider.
+        new Sly($frame, defaults).init();
+    });
+  </script>
+</body>
+
+</html>

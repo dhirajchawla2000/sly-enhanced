@@ -1,0 +1,26 @@
+{
+  "name": "sly-enhanced",
+  "version": "1.0.0",
+  "description": "A JavaScript library for advanced one-directional scrolling",
+  "main": "src/sly.js",
+  "scripts": {
+    "build": "gulp build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mi-gitrepo",
+  "license": "MIT",
+  "homepage": "https://github.com/mi-gitrepo/sly-enhanced",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mi-gitrepo/sly-enhanced"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-jsmin": "^0.1.5",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rimraf": "^0.2.1",
+    "gulp-sass": "^3.0.0",
+    "jquery": "^3.1.1"
+  }
+}
