@@ -1,4 +1,4 @@
-[![npm](https://img.shields.io/badge/npm-v1.0.0-brightgreen.svg)](https://www.npmjs.com/package/responsive-menu)
+[![npm](https://img.shields.io/badge/npm-v1.0.1-brightgreen.svg)](https://www.npmjs.com/package/sly-enhanced)
 
 #jQuery Sly Slider
 
