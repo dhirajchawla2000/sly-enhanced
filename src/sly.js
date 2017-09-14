@@ -487,9 +487,9 @@
 			// Update SLIDEE position
 			if (!parallax) {
 				if (transform) {
-					$slidee[0].style[transform] = gpuAcceleration + (o.horizontal ? 'translateX' : 'translateY') + '(' + (-pos.cur) + 'px)';
+					$slidee[0].style[transform] = gpuAcceleration + (o.horizontal ? 'translateX' : 'translateY') + '(' + (o.rtl === true ? pos.cur : -pos.cur) + 'px)';
 				} else {
-					$slidee[0].style[o.horizontal ? 'left' : 'top'] = -round(pos.cur) + 'px';
+					$slidee[0].style[o.horizontal ? 'left' : 'top'] = (o.rtl === true ? round(pos.cur) : -round(pos.cur)) + 'px';
 				}
 			}
 
@@ -517,9 +517,9 @@
 				if (last.hPos !== hPos.cur) {
 					last.hPos = hPos.cur;
 					if (transform) {
-						$handle[0].style[transform] = gpuAcceleration + (o.horizontal ? 'translateX' : 'translateY') + '(' + hPos.cur + 'px)';
+						$handle[0].style[transform] = gpuAcceleration + (o.horizontal ? 'translateX' : 'translateY') + '(' + (o.rtl === true ? -hPos.cur : hPos.cur) + 'px)';
 					} else {
-						$handle[0].style[o.horizontal ? 'left' : 'top'] = hPos.cur + 'px';
+						$handle[0].style[o.horizontal ? 'left' : 'top'] = (o.rtl === true ? -hPos.cur : hPos.cur) + 'px';
 					}
 				}
 			}
@@ -2216,7 +2216,10 @@
 		// Classes
 		draggedClass:  'dragged', // Class for dragged elements (like SLIDEE or scrollbar handle).
 		activeClass:   'active',  // Class for active items and pages.
-		disabledClass: 'disabled' // Class for disabled navigation elements.
+		disabledClass: 'disabled', // Class for disabled navigation elements.
+
+		// RTL Support
+		rtl:           false      // RTL support, default false
 	};
 
 }));
